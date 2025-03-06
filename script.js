@@ -118,6 +118,11 @@ document.addEventListener('DOMContentLoaded', function () {
     if (savedTheme === 'dark') {
         body.classList.add('dark-mode');
         themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    } else if (!savedTheme) {
+        // Set default theme to dark mode if no preference is saved
+        body.classList.add('dark-mode');
+        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+        localStorage.setItem('theme', 'dark');
     }
 
     // Toggle theme when clicked
@@ -129,6 +134,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
                 localStorage.setItem('theme', 'dark');
             } else {
+
                 themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
                 localStorage.setItem('theme', 'light');
             }
