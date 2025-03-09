@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abhishek Mishra - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <link rel="icon" href="image/uriichi.png" type="image/x-icon">
+    <link rel="icon" href="assets/image/uriichi.png" type="assets/image/x-icon">
 </head>
 
 <body>
@@ -63,7 +63,7 @@
             <div class="hero-image">
                 <div class="blob"></div>
                 <div class="profile-image">
-                    <img src="image/uriichi.png" alt="Abhishek Mishra">
+                    <img src="assets/image/uriichi.png" alt="Abhishek Mishra">
                 </div>
             </div>
         </div>
@@ -103,10 +103,10 @@
                             <span class="info-text">B.Tech in CS&E (Full Stack)</span>
                         </div>
                     </div>
-                    <a href="Abhishek_m.pdf" class="btn primary-btn download-cv" download>Download CV</a>
+                    <a href="assets/pdf/Abhishek_m.pdf" class="btn primary-btn download-cv" download>Download CV</a>
                 </div>
                 <div class="about-image">
-                    <!-- You can add another profile image or illustration here -->
+                    <!-- You can add another profile assets/image or illustration here -->
                 </div>
             </div>
         </div>
@@ -125,6 +125,7 @@
                 <div class="skill-category" data-category="backend">Backend</div>
                 <div class="skill-category" data-category="databases">Databases</div>
                 <div class="skill-category" data-category="tools">Tools</div>
+
             </div>
             <div class="skills-container">
                 <div class="skills-content active" id="languages">
@@ -333,12 +334,16 @@
                 <button class="filter-btn" data-filter="full-stack">Full Stack</button>
                 <button class="filter-btn" data-filter="frontend">Frontend</button>
                 <button class="filter-btn" data-filter="backend">Backend</button>
+                <button class="filter-btn" data-filter="simulation">simulation</button>
+                <button class="filter-btn" data-filter="systems">systems</button>
+                <button class="filter-btn" data-filter="security">security</button>
+                <button class="filter-btn" data-filter="automation">automation</button>
             </div>
 
             <div class="projects-container">
                 <div class="project-card" data-category="full-stack">
                     <div class="project-img">
-                        <img src="image/blog.png" alt="Blog Website">
+                        <img src="assets/image/blog.png" alt="Blog Website">
                     </div>
                     <div class="project-content">
                         <h3>Blog Website</h3>
@@ -361,7 +366,7 @@
 
                 <div class="project-card" data-category="full-stack">
                     <div class="project-img">
-                        <img src="image/Internship.jpg" alt="Internship Portal">
+                        <img src="assets/image/Internship.jpg" alt="Internship Portal">
                     </div>
                     <div class="project-content">
                         <h3>Internship Portal</h3>
@@ -402,7 +407,7 @@
 
                 <div class="project-card" data-category="backend">
                     <div class="project-img">
-                        <img src="image/crud.png" alt="CRUD API">
+                        <img src="assets/image/crud.png" alt="CRUD API">
                     </div>
                     <div class="project-content">
                         <h3>CRUD Operations Using .NET Web API</h3>
@@ -419,6 +424,116 @@
                         </div>
                     </div>
                 </div>
+                <div class="project-card" data-category="frontend">
+                    <div class="project-img">
+                        <img src="assets/image/repo.png" alt="GitHub Repos Viewer">
+                    </div>
+                    <div class="project-content">
+                        <h3>GitHub Public Repositories Viewer</h3>
+                        <p>A web app that fetches and displays GitHub public repositories with filtering options.</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://st-mary.stmary.tech/" class="btn secondary-btn">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/abhishek-mishraji/Github_public_repos" class="btn primary-btn">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Jarvish -->
+                <div class="project-card" data-category="automation">
+                    <div class="project-img">
+                        <img src="assets/image/jarvish.png" alt="Jarvish">
+                    </div>
+                    <div class="project-content">
+                        <h3>Jarvish: Basic Computer Operating Automation</h3>
+                        <p>An automated script that allows users to perform basic computer operations through voice
+                            commands, such as sending emails and conducting web searches.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/abhishek-mishraji/Jarvish" class="btn primary-btn">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project: File Encryption and Decryption -->
+                <div class="project-card" data-category="security">
+                    <div class="project-img">
+                        <img src="assets/image/encrypt.png" alt="File Encryption and Decryption">
+                    </div>
+                    <div class="project-content">
+                        <h3>File Encryption and Decryption</h3>
+                        <p>A Java application that encrypts and decrypts files of any type using a user-provided key,
+                            ensuring data security and confidentiality.</p>
+                        <p><strong>Key Feature:</strong> The more incorrect attempts to enter the decryption key, the
+                            lower the chances of successfully recovering the original file content.</p>
+                        <div class="project-tech">
+                            <span>Java</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/abhishek-mishraji/File_Encryption_Decryption"
+                                class="btn primary-btn">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project: Algorithm Simulation -->
+                <div class="project-card" data-category="simulation">
+                    <div class="project-img">
+                        <img src="assets/image/algo.png" alt="Algorithm Simulation">
+                    </div>
+                    <div class="project-content">
+                        <h3>Algorithm Simulation</h3>
+                        <p>A C++ program that simulates various algorithms, providing a visual understanding of their
+                            operations and performance.</p>
+                        <div class="project-tech">
+                            <span>C++</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/abhishek-mishraji/Alogorithm-Simulation"
+                                class="btn primary-btn">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project: Memory Allocation Strategies -->
+                <div class="project-card" data-category="systems">
+                    <div class="project-img">
+                        <img src="assets/image/memory.png" alt="Memory Allocation Strategies">
+                    </div>
+                    <div class="project-content">
+                        <h3>Memory Allocation: First Fit, Best Fit, and Worst Fit</h3>
+                        <p>A C program that demonstrates memory allocation strategies by assigning processes to memory
+                            blocks using First Fit, Best Fit, and Worst Fit algorithms, and calculates fragmentation and
+                            block wastage.</p>
+                        <div class="project-tech">
+                            <span>C</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/abhishek-mishraji/Mermory_allocation_First_best_and_Worst_Fit"
+                                class="btn primary-btn">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
             </div>
         </div>
     </section>
@@ -575,7 +690,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
