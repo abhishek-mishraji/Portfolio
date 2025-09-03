@@ -33,6 +33,7 @@
     <meta name="twitter:image" content="https://abhishek.ninja/assets/image/uriichi.png">
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/enhanced-projects.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
@@ -366,7 +367,8 @@
                 <button class="filter-btn" data-filter="automation">Automation</button>
             </div>
 
-            <div class="projects-container">
+            <div class="projects-wrapper">
+                <div class="projects-container">
                 <div class="project-card" data-category="full-stack">
                     <div class="project-img">
                         <img src="assets/image/blog.png" alt="Blog Website">
@@ -375,6 +377,10 @@
                         <h3>Blog Website</h3>
                         <p>A full-stack blogging platform with authentication, CRUD operations, and SEO optimization.
                         </p>
+                        
+                        <p>Deployed: Heroku</p>
+                        <p>MySQL service: Heroku</p>
+                        <p>Server: Apache</p>
                         <div class="project-tech">
                             <span>PHP</span>
                             <span>MySQL</span>
@@ -397,6 +403,9 @@
                     <div class="project-content">
                         <h3>Internship Portal</h3>
                         <p>A dynamic portal for students to apply for internships with role-based authentication.</p>
+                        
+                        <p>Deployed: Render</p>
+                        <p>DB Server: MongoDB</p>
                         <div class="project-tech">
                             <span>MongoDB</span>
                             <span>Express.js</span>
@@ -412,51 +421,41 @@
                     </div>
                 </div>
 
-                <!-- <div class="project-card" data-category="backend">
+                <div class="project-card" data-category="full-stack">
                     <div class="project-img">
-                        <img src="https://via.placeholder.com/600x400?text=Vacant+Room+Finder" alt="Vacant Room Finder">
+                        <img src="assets/image/vacant.png" alt="Find Vacant Room Portal">
                     </div>
                     <div class="project-content">
-                        <h3>Find Vacant Room in University</h3>
-                        <p>An application to find empty rooms in a university block with real-time data retrieval.</p>
+                        <h3>Find Vacant Room</h3>
+                        <p>A web-based system for finding vacant rooms in university buildings with real-time status updates. The system allows normal users to view room availability and admins to update room occupancy status.</p>
+                       
+                        <p>Deployed: Heroku</p>
+                        <p>MySQL service: Aiven</p>
+                        <p>Server: Apache</p>
                         <div class="project-tech">
-                            <span>C#</span>
-                            <span>.NET</span>
-                            <span>SQL</span>
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>HTML/CSS</span>
+                            <span>Apache</span>
+                            <span>js</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="btn secondary-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://cybercrimepolice.me/index.php" class="btn secondary-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                             <a href="#" class="btn primary-btn"><i class="fab fa-github"></i> GitHub</a>
                         </div>
                     </div>
-                </div> -->
-
-                <div class="project-card" data-category="backend">
-                    <div class="project-img">
-                        <img src="assets/image/crud.png" alt="CRUD API">
-                    </div>
-                    <div class="project-content">
-                        <h3>CRUD Operations Using .NET Web API</h3>
-                        <p>A RESTful API for performing CRUD operations with a user-friendly GUI.</p>
-                        <div class="project-tech">
-                            <span>C#</span>
-                            <span>.NET</span>
-                            <span>MySQL</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="btn secondary-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            <a href="https://github.com/abhishek-mishraji/CRUD_BY_API_DOTNET_SQL"
-                                class="btn primary-btn"><i class="fab fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
                 </div>
-                <div class="project-card" data-category="frontend">
+
+
+ <div class="project-card" data-category="frontend">
                     <div class="project-img">
                         <img src="assets/image/repo.png" alt="GitHub Repos Viewer">
                     </div>
                     <div class="project-content">
                         <h3>GitHub Public Repositories Viewer</h3>
                         <p>A web app that fetches and displays GitHub public repositories with filtering options.</p>
+                       
+                        <p>Deployed: GitHub Pages</p>
                         <div class="project-tech">
                             <span>HTML</span>
                             <span>CSS</span>
@@ -472,6 +471,26 @@
                         </div>
                     </div>
                 </div>
+                <div class="project-card" data-category="backend">
+                    <div class="project-img">
+                        <img src="assets/image/crud.png" alt="CRUD API">
+                    </div>
+                    <div class="project-content">
+                        <h3>CRUD Operations Using .NET Web API</h3>
+                        <p>A RESTful API for performing CRUD operations with a user-friendly GUI.</p>
+                        <div class="project-tech">
+                            <span>C#</span>
+                            <span>.NET</span>
+                            <span>MySQL</span>
+                        </div>
+                        <div class="project-links">
+                            <!-- <a href="#" class="btn secondary-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a> -->
+                            <a href="https://github.com/abhishek-mishraji/CRUD_BY_API_DOTNET_SQL"
+                                class="btn primary-btn"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+               
                 <!-- Project: Jarvish -->
                 <div class="project-card" data-category="automation">
                     <div class="project-img">
@@ -557,9 +576,9 @@
                     </div>
                 </div>
 
-
-
-
+                <!-- Project: Find Vacant Room Portal -->
+               
+            </div>
             </div>
         </div>
     </section>
@@ -717,6 +736,7 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script src="js/enhanced-projects.js"></script>
 </body>
 
 </html>
