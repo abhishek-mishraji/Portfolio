@@ -1,0 +1,18 @@
+/* Google AdSense Styling */
+.ad-section {
+    padding: 30px 0;
+    text-align: center;
+    background-color: var(--bg-color);
+    margin: 20px 0;
+}
+
+.ad-section .container {
+    max-width: 100%;
+}
+
+/* Responsive Ad Styling */
+@media (max-width: 768px) {
+    .ad-section {
+        padding: 20px 0;
+    }
+}
