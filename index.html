@@ -40,7 +40,27 @@
         rel="stylesheet">
     <link rel="icon" href="assets/image/uriichi.png" type="image/png">
     
-    <!-- Google AdSense Code - Replace with your actual AdSense code -->
+    <!-- Google AdSense Code with TCF Integration -->
+    <script async src="https://fundingchoicesmessages.google.com/i/pub-3958044956648566?ers=1" nonce="RANDOMSTR1NG"></script>
+    <script nonce="RANDOMSTR1NG">
+      (function() {
+        function signalGooglefcPresent() {
+          if (!window.frames['googlefcPresent']) {
+            if (document.body) {
+              const iframe = document.createElement('iframe');
+              iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;';
+              iframe.style.display = 'none';
+              iframe.name = 'googlefcPresent';
+              document.body.appendChild(iframe);
+            } else {
+              setTimeout(signalGooglefcPresent, 0);
+            }
+          }
+        }
+        signalGooglefcPresent();
+      })();
+    </script>
+    
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3958044956648566"
      crossorigin="anonymous"></script>
 </head>
@@ -766,7 +786,7 @@
     <footer>
         <div class="container" style=" color: black;">
             <div class="back-to-top">
-                <p>&copy; 2023 Abhishek Mishra. All Rights Reserved.</p>
+                <p>&copy; 2023 Abhishek Mishra. All Rights Reserved. | <a href="#" id="privacy-settings" style="color: inherit; text-decoration: underline;">Privacy Settings</a></p>
                 <a href="#home"><i class="fas fa-arrow-up"></i></a>
             </div>
         </div>
@@ -774,6 +794,16 @@
 
     <script src="js/script.js"></script>
     <script src="js/enhanced-projects.js"></script>
+    <script>
+        // Google's Privacy Settings Handler
+        document.getElementById('privacy-settings').addEventListener('click', function(e) {
+            e.preventDefault();
+            // Open Google's CMP privacy settings
+            if (window.googlefc && window.googlefc.showRevocationMessage) {
+                window.googlefc.showRevocationMessage();
+            }
+        });
+    </script>
 </body>
 
 </html>
