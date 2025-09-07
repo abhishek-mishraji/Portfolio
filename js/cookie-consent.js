@@ -79,22 +79,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Link privacy settings to Google CMP
+    // Link privacy settings to always open privacy page
     const privacySettingsLink = document.getElementById('privacy-settings');
     if (privacySettingsLink) {
         privacySettingsLink.addEventListener('click', function(e) {
             e.preventDefault();
-            
-            // Try to open Google's privacy controls with fallback to cookie policy page
-            if (!openGooglePrivacyControls(() => {
-                window.location.href = 'cookie-policy.html';
-            })) {
-                // Additional fallback if the function returns false but doesn't execute the callback
-                // (shouldn't happen with the current implementation, but added for robustness)
-                setTimeout(() => {
-                    window.location.href = 'cookie-policy.html';
-                }, 500);
-            }
+            window.location.href = 'cookie-policy.html';
         });
     }
     
