@@ -1,0 +1,48 @@
+/* Privacy Settings Button Styles */
+#privacy-settings {
+    color: var(--primary-color) !important; 
+    text-decoration: underline;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-block;
+    padding: 2px 5px;
+    margin-left: 5px;
+}
+
+#privacy-settings:hover {
+    opacity: 0.8;
+    text-decoration: none;
+}
+
+/* Make sure the privacy button is visible in dark mode */
+body.dark-mode #privacy-settings {
+    color: var(--primary-color) !important;
+}
+
+/* Make sure the privacy button is visible in light mode */
+body:not(.dark-mode) #privacy-settings {
+    color: var(--primary-color) !important;
+}
+
+/* Ensure the footer text is visible in both modes */
+footer p {
+    color: var(--text-color) !important;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Footer responsiveness */
+@media (max-width: 768px) {
+    footer .back-to-top {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    footer p {
+        justify-content: center;
+        text-align: center;
+    }
+}

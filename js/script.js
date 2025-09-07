@@ -323,10 +323,26 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Update copyright year
-    const copyrightYear = document.querySelector('footer p');
-    if (copyrightYear) {
+    const copyrightYearSpan = document.getElementById('copyright-year');
+    if (copyrightYearSpan) {
         const year = new Date().getFullYear();
-        copyrightYear.textContent = `© ${year} Abhishek Mishra. All Rights Reserved.`;
+        copyrightYearSpan.textContent = year;
+    }
+    
+    // Add privacy settings event listener
+    const privacySettingsLink = document.getElementById('privacy-settings');
+    if (privacySettingsLink) {
+        privacySettingsLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Open Google's CMP privacy settings
+            if (window.googlefc && window.googlefc.showRevocationMessage) {
+                window.googlefc.showRevocationMessage();
+            } else {
+                // Fallback for when Google's CMP is not available
+                
+                window.location.href = 'cookie-policy.html';
+            }
+        });
     }
 
     // Make sure footer is visible by checking document height

@@ -31,10 +31,13 @@
     <meta name="twitter:description"
         content="Full Stack Developer specializing in web development and algorithm optimization. View my projects and skills.">
     <meta name="twitter:image" content="https://abhishek.ninja/assets/image/uriichi.png">
+    <meta name="google-adsense-account" content="ca-pub-3958044956648566">
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/enhanced-projects.css">
     <link rel="stylesheet" href="css/adsense.css">
+    <link rel="stylesheet" href="css/privacy-button.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
@@ -772,8 +775,8 @@
             <!-- Google AdSense Ad Unit - Replace with your actual ad code -->
             <ins class="adsbygoogle"
                  style="display:block"
-                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-                 data-ad-slot="XXXXXXXXXX"
+                 data-ad-client="ca-pub-3958044956648566"
+                 data-ad-slot="3958044956648566"
                  data-ad-format="auto"
                  data-full-width-responsive="true"></ins>
             <script>
@@ -784,26 +787,21 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container" style=" color: black;">
-            <div class="back-to-top">
-                <p>&copy; 2023 Abhishek Mishra. All Rights Reserved. | <a href="#" id="privacy-settings" style="color: inherit; text-decoration: underline;">Privacy Settings</a></p>
-                <a href="#home"><i class="fas fa-arrow-up"></i></a>
+        <div class="container">
+           
+                <p>
+                    &copy; <span id="copyright-year">2023</span> Abhishek Mishra. All Rights Reserved.
+             <a href="cookie-policy.html" id="privacy-settings">Privacy Settings</a>
+                </p>
+                 <div class="back-to-top"></div>
+                <a href="#home" class="top-arrow"><i class="fas fa-arrow-up"></i></a>
             </div>
         </div>
     </footer>
 
     <script src="js/script.js"></script>
     <script src="js/enhanced-projects.js"></script>
-    <script>
-        // Google's Privacy Settings Handler
-        document.getElementById('privacy-settings').addEventListener('click', function(e) {
-            e.preventDefault();
-            // Open Google's CMP privacy settings
-            if (window.googlefc && window.googlefc.showRevocationMessage) {
-                window.googlefc.showRevocationMessage();
-            }
-        });
-    </script>
+   
 </body>
 
 </html>

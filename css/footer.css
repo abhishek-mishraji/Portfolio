@@ -1,0 +1,32 @@
+/* Footer responsive styles */
+/* @media (max-width: 768px) {
+    footer {
+        padding: 30px 0;
+    }
+    
+    .back-to-top {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .back-to-top p {
+        text-align: center;
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+    
+    #privacy-settings {
+        margin-top: 5px;
+    }
+} */
+
+/* Additional styles for dark mode footer */
+/* body.dark-mode footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+} */
+
+/* Make privacy settings more noticeable */
+#privacy-settings {
+    position: relative;
+    z-index: 10;
+}

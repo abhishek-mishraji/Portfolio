@@ -1097,8 +1097,8 @@ nav {
 /* Footer */
 footer {
     padding: 40px 0;
-    background-color: var(--dark-color);
-    color: white;
+    background-color: var(--light-color);
+    color: var(--text-color);
     text-align: center;
     margin-top: 50px;
     /* Add margin to create separation */
@@ -1112,6 +1112,7 @@ footer {
     /* Minimum height to ensure visibility */
     display: block;
     /* Force display as block element */
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .footer-content {
@@ -1127,16 +1128,18 @@ footer {
 }
 
 .footer-links a {
-    color: white;
+    color: var(--text-color);
     transition: var(--transition);
 }
 
 .footer-links a:hover {
-    color: var (--primary-color);
+    color: var(--primary-color);
 }
 
 .back-to-top {
-    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .back-to-top a {
@@ -1152,8 +1155,22 @@ footer {
     transition: var(--transition);
 }
 
-.back-to-top a:hover {
+ a.top-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white !important;
+    font-size: 18px;
+    transition: var(--transition);
+}
+
+ a.top-arrow:hover {
     transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Ensure proper spacing between sections and footer */

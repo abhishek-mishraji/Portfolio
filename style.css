@@ -24,7 +24,22 @@
     font-size: 1.2rem;
     margin-bottom: 30px;
 }
+/* AdSense Ad Styling */
+.ad-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 15px 0;
+    text-align: center;
+    clear: both;
+}
 
+@media (max-width: 768px) {
+    .ad-container {
+        margin: 20px auto;
+        padding: 10px 0;
+    }
+}
 /* Media queries for smaller screens */
 @media (max-width: 768px) {
     .hero {
