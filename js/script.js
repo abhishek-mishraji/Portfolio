@@ -324,10 +324,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Update copyright year
     const copyrightYearSpan = document.getElementById('copyright-year');
-    if (copyrightYearSpan) {
-        const year = new Date().getFullYear();
-        copyrightYearSpan.textContent = year;
-    }
+    // if (copyrightYearSpan) {
+    //     const year = new Date().getFullYear();
+    //     copyrightYearSpan.textContent = year;
+    // }
     
     // Add privacy settings event listener
     const privacySettingsLink = document.getElementById('privacy-settings');

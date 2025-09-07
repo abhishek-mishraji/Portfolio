@@ -1096,50 +1096,50 @@ nav {
 
 /* Footer */
 footer {
-    padding: 40px 0;
+    padding: 25px 0;
     background-color: var(--light-color);
     color: var(--text-color);
     text-align: center;
-    margin-top: 50px;
-    /* Add margin to create separation */
+    margin-top: 20px; /* Reduced margin from 50px to 20px */
     position: relative;
-    /* Ensure proper positioning */
     z-index: 10;
-    /* Make sure it's above other elements */
     width: 100%;
-    /* Ensure it spans full width */
-    min-height: 100px;
-    /* Minimum height to ensure visibility */
+    min-height: 80px; /* Reduced from 100px */
     display: block;
-    /* Force display as block element */
     border-top: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05); /* Added subtle shadow for depth */
 }
 
 .footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
-.footer-links {
+.copyright {
     display: flex;
-    gap: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
 }
 
-.footer-links a {
-    color: var(--text-color);
+.copyright p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+#privacy-settings {
+    color: var(--primary-color);
+    text-decoration: underline;
+    font-weight: 500;
+    font-size: 0.9rem;
     transition: var(--transition);
 }
 
-.footer-links a:hover {
-    color: var(--primary-color);
-}
-
-.back-to-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+#privacy-settings:hover {
+    text-decoration: none;
+    opacity: 0.8;
 }
 
 .back-to-top a {
@@ -1166,17 +1166,19 @@ footer {
     color: white !important;
     font-size: 18px;
     transition: var(--transition);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
  a.top-arrow:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    background-color: var(--primary-color);
 }
 
 /* Ensure proper spacing between sections and footer */
 section:last-of-type {
     margin-bottom: 0;
-    /* Remove any margin from the last section */
+    padding-bottom: 60px; /* Add padding to the bottom of the last section */
 }
 
 /* Animations */

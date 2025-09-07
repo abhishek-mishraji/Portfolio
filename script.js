@@ -324,10 +324,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Update copyright year
     const copyrightYear = document.querySelector('footer p');
-    if (copyrightYear) {
-        const year = new Date().getFullYear();
-        copyrightYear.textContent = `© ${year} Abhishek Mishra. All Rights Reserved.`;
-    }
+    // if (copyrightYear) {
+    //     const year = new Date().getFullYear();
+    //     copyrightYear.textContent = `© ${year} Abhishek Mishra. All Rights Reserved.`;
+    // }
 
     // Make sure footer is visible by checking document height
     const checkDocumentHeight = () => {
