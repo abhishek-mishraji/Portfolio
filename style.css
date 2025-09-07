@@ -206,7 +206,7 @@ section {
 }
 
 .primary-btn:hover {
-    background-color: var(--dark-color);
+    /* background-color: var(--dark-color); */
     transform: translateY(-3px);
 }
 

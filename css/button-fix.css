@@ -1,0 +1,44 @@
+/* Additional button styles to prevent text from disappearing on hover */
+.btn i {
+  display: inline-block;
+  margin-right: 5px;
+  transition: all 0.3s ease;
+  vertical-align: middle;
+}
+
+.btn:hover i {
+  transform: translateX(0);
+}
+
+/* Fix for specific buttons like Send Message */
+.contact-form .btn.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: auto;
+}
+
+.contact-form .btn.primary-btn i {
+  margin: 0;
+}
+
+/* Fix for project card buttons */
+.project-links .btn {
+  margin: 5px;
+  min-width: 120px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-links .btn i {
+  margin-right: 8px;
+}
+
+/* Ensure text visibility during animations */
+.btn span, 
+.btn i {
+  position: relative;
+  z-index: 2;
+}
