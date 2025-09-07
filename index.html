@@ -38,55 +38,34 @@
     <link rel="stylesheet" href="css/adsense.css">
     <link rel="stylesheet" href="css/privacy-button.css">
     <link rel="stylesheet" href="css/footer.css">
-    <!-- <link rel="stylesheet" href="css/button-fix.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
     <link rel="icon" href="assets/image/uriichi.png" type="image/png">
-    <script async custom-element="amp-auto-ads"
-        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
-</script>
+    <!-- Only load FontAwesome if you use icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <!-- Only load Google Fonts if you use them -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 
-    <!-- Google AdSense Code with TCF Integration -->
-    <script async src="https://fundingchoicesmessages.google.com/i/pub-3958044956648566?ers=1" nonce="RANDOMSTR1NG"></script>
-    <script nonce="RANDOMSTR1NG">
-      (function() {
-        function signalGooglefcPresent() {
-          if (!window.frames['googlefcPresent']) {
-            if (document.body) {
-              const iframe = document.createElement('iframe');
-              iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;';
-              iframe.style.display = 'none';
-              iframe.name = 'googlefcPresent';
-              document.body.appendChild(iframe);
-            } else {
-              setTimeout(signalGooglefcPresent, 0);
-            }
-          }
-        }
-        signalGooglefcPresent();
-      })();
-    </script>
-    
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3958044956648566"
-     crossorigin="anonymous"></script>
-     
-    <!-- Ensure Funding Choices is loaded correctly -->
-    <script>
-        // Ensure Google's CMP is properly detected
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                if (typeof window.googlefc === 'undefined') {
-                    console.log("Google CMP not detected after page load, attempting to reload");
-                    // Try to reload the script if not detected
-                    const script = document.createElement('script');
-                    script.async = true;
-                    script.src = "https://fundingchoicesmessages.google.com/i/pub-3958044956648566?ers=1";
-                    document.head.appendChild(script);
+        <!-- Google AdSense Code with TCF Integration -->
+        <script async src="https://fundingchoicesmessages.google.com/i/pub-3958044956648566?ers=1" nonce="RANDOMSTR1NG"></script>
+        <script nonce="RANDOMSTR1NG">
+            (function() {
+                function signalGooglefcPresent() {
+                    if (!window.frames['googlefcPresent']) {
+                        if (document.body) {
+                            const iframe = document.createElement('iframe');
+                            iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;';
+                            iframe.style.display = 'none';
+                            iframe.name = 'googlefcPresent';
+                            document.body.appendChild(iframe);
+                        } else {
+                            setTimeout(signalGooglefcPresent, 0);
+                        }
+                    }
                 }
-            }, 2000); // Check after 2 seconds
-        });
-    </script>
+                signalGooglefcPresent();
+            })();
+        </script>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3958044956648566" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -787,16 +766,15 @@
                 <div class="copyright">
                     <p>&copy; 2025    Abhishek Mishra. All Rights Reserved.</p>
                     <a href="cookie-policy.html" id="privacy-settings">Privacy Settings</a>
-                    <a href="#" id="direct-privacy-control" style="margin-left: 15px; display: none;">Cookie Preferences</a>
                 </div>
                 <a href="#home" class="top-arrow"><i class="fas fa-arrow-up"></i></a>
             </div>
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
-    <script src="js/enhanced-projects.js"></script>
-    <script src="js/cookie-consent.js"></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/enhanced-projects.js" defer></script>
+    <script src="js/cookie-consent.js" defer></script>
    
 </body>
 
