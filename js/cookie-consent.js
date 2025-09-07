@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Additional fallback just in case
                 setTimeout(() => {
                     window.location.href = 'cookie-policy.html';
-                }, 500);
+                });
             }
         });
     }
