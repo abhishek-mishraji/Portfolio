@@ -329,21 +329,8 @@ document.addEventListener('DOMContentLoaded', function () {
     //     copyrightYearSpan.textContent = year;
     // }
     
-    // Add privacy settings event listener
-    const privacySettingsLink = document.getElementById('privacy-settings');
-    if (privacySettingsLink) {
-        privacySettingsLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            // Open Google's CMP privacy settings
-            if (window.googlefc && window.googlefc.showRevocationMessage) {
-                window.googlefc.showRevocationMessage();
-            } else {
-                // Fallback for when Google's CMP is not available
-                
-                window.location.href = 'cookie-policy.html';
-            }
-        });
-    }
+    // Privacy settings event listener is now handled in cookie-consent.js
+    // Removed from here to avoid conflicts
 
     // Make sure footer is visible by checking document height
     const checkDocumentHeight = () => {

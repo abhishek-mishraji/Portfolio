@@ -70,6 +70,23 @@
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3958044956648566"
      crossorigin="anonymous"></script>
+     
+    <!-- Ensure Funding Choices is loaded correctly -->
+    <script>
+        // Ensure Google's CMP is properly detected
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                if (typeof window.googlefc === 'undefined') {
+                    console.log("Google CMP not detected after page load, attempting to reload");
+                    // Try to reload the script if not detected
+                    const script = document.createElement('script');
+                    script.async = true;
+                    script.src = "https://fundingchoicesmessages.google.com/i/pub-3958044956648566?ers=1";
+                    document.head.appendChild(script);
+                }
+            }, 2000); // Check after 2 seconds
+        });
+    </script>
 </head>
 
 <body>
@@ -174,21 +191,7 @@
         </div>
     </section>
 
-    <!-- AdSense Ad Unit -->
-    <section class="ad-section">
-        <div class="container">
-            <!-- Google AdSense Ad Unit - Replace with your actual ad code -->
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-3958044956648566"
-                 data-ad-slot="3958044956648566"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
-    </section>
+   
 
     <!-- Skills Section -->
     <section id="skills" class="skills">
@@ -776,22 +779,7 @@
 
     </section>
 
-    <!-- AdSense Ad Unit - Bottom -->
-    <section class="ad-section">
-        <div class="container">
-            <!-- Google AdSense Ad Unit - Replace with your actual ad code -->
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-3958044956648566"
-                 data-ad-slot="3958044956648566"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
-    </section>
-
+   
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -799,6 +787,7 @@
                 <div class="copyright">
                     <p>&copy; 2025    Abhishek Mishra. All Rights Reserved.</p>
                     <a href="cookie-policy.html" id="privacy-settings">Privacy Settings</a>
+                    <a href="#" id="direct-privacy-control" style="margin-left: 15px;">Cookie Preferences</a>
                 </div>
                 <a href="#home" class="top-arrow"><i class="fas fa-arrow-up"></i></a>
             </div>

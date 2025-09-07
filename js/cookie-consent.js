@@ -33,14 +33,17 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Event listener for settings button
         cookieConsent.querySelector('.customize').addEventListener('click', function() {
-            // Direct to Google CMP settings if available
-            if (window.googlefc && window.googlefc.showRevocationMessage) {
-                window.googlefc.showRevocationMessage();
-                acknowledgeNotice();
-                cookieConsent.remove();
-            } else {
-                // Otherwise go to cookie policy page
+            // Try to open Google's privacy controls with fallback
+            acknowledgeNotice();
+            cookieConsent.remove();
+            
+            if (!openGooglePrivacyControls(() => {
                 window.location.href = 'cookie-policy.html';
+            })) {
+                // Additional fallback just in case
+                setTimeout(() => {
+                    window.location.href = 'cookie-policy.html';
+                }, 500);
             }
         });
     }
@@ -50,21 +53,93 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('cookieNoticed', 'true');
     }
     
+    // Function to handle opening Google's privacy controls with robust fallback
+    function openGooglePrivacyControls(fallbackCallback) {
+        if (typeof window.googlefc !== 'undefined' && typeof window.googlefc.showRevocationMessage === 'function') {
+            try {
+                // Attempt to show Google's privacy controls
+                window.googlefc.showRevocationMessage();
+                console.log("Google privacy controls opened successfully");
+                return true;
+            } catch (error) {
+                console.error("Error opening Google privacy controls:", error);
+                // Execute fallback if provided
+                if (typeof fallbackCallback === 'function') {
+                    fallbackCallback();
+                }
+                return false;
+            }
+        } else {
+            console.log("Google privacy controls not available");
+            // Execute fallback if provided
+            if (typeof fallbackCallback === 'function') {
+                fallbackCallback();
+            }
+            return false;
+        }
+    }
+    
     // Link privacy settings to Google CMP
     const privacySettingsLink = document.getElementById('privacy-settings');
     if (privacySettingsLink) {
         privacySettingsLink.addEventListener('click', function(e) {
             e.preventDefault();
-            // Try to use Google's CMP revocation message
-            if (window.googlefc && window.googlefc.showRevocationMessage) {
-                window.googlefc.showRevocationMessage();
-            } else {
-                // Fallback to cookie policy page
+            
+            // Try to open Google's privacy controls with fallback to cookie policy page
+            if (!openGooglePrivacyControls(() => {
                 window.location.href = 'cookie-policy.html';
+            })) {
+                // Additional fallback if the function returns false but doesn't execute the callback
+                // (shouldn't happen with the current implementation, but added for robustness)
+                setTimeout(() => {
+                    window.location.href = 'cookie-policy.html';
+                }, 500);
+            }
+        });
+    }
+    
+    // Direct privacy control link - alternative approach to trigger Google's CMP
+    const directPrivacyLink = document.getElementById('direct-privacy-control');
+    if (directPrivacyLink) {
+        directPrivacyLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Alternative method to trigger Google's CMP
+            if (typeof window.__tcfapi === 'function') {
+                try {
+                    window.__tcfapi('displayConsentUi', 2, function() {
+                        console.log('TCF API consent UI displayed');
+                    });
+                } catch (error) {
+                    console.error('Error displaying TCF consent UI:', error);
+                    // Try our regular method as fallback
+                    openGooglePrivacyControls(() => {
+                        window.location.href = 'cookie-policy.html';
+                    });
+                }
+            } else {
+                // If TCF API not available, use our regular method
+                openGooglePrivacyControls(() => {
+                    window.location.href = 'cookie-policy.html';
+                });
             }
         });
     }
     
     // Initial check to show the cookie notice
     showCookieNotice();
+    
+    // Additional handler for Google's CMP delayed loading
+    // Sometimes Google's CMP loads after our script has initialized
+    window.addEventListener('message', function(event) {
+        try {
+            const data = JSON.parse(event.data);
+            if (data && data.gfcPresent) {
+                console.log("Google CMP detected via postMessage");
+                // Refresh the privacy controls if needed
+            }
+        } catch (e) {
+            // Not a JSON message or not the one we're looking for
+        }
+    });
 });
